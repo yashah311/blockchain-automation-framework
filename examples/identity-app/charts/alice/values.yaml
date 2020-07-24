@@ -7,49 +7,49 @@
 metadata:
   #Provide the namespace for organization's peer
   #Eg. namespace: university-ns
-  namespace:
+  namespace: university-ns
 
   #Provide the name for student agent
   #Eg. name: student-alice
-  name:
+  name: student-alice
 
 organization:
   #Provide the name for organization
   #Eg. name: university
-  name:
+  name: university
 
 image:
   agent:
     #Provide the image name for the alice container
     #Eg. name: student-alice
-    name:
+    name: student-alice
 
     #Provide the image repository for the alice container
     #Eg. repository: aries-agents:1.11.0
-    repository:
+    repository: aries-agents:1.11.0
 
   #Provide the image pull secret of image
   #Eg. pullSecret: regcred
-  pullSecret:
+  pullSecret: regcred
 
 service:
     ports:
       #Provide the service node port for service connections
       #Eg. endpoint: 8030
-      service:
+      service: 8030
 
       #Provide the service node port for swagger UI
       #Eg. endpoint: 8031
-      endpoint:
+      endpoint: 8031
 
     #Provide the address of this agent
     #Eg. address: 192.168.99.204
-    address:
+    address: 192.168.99.204
 
     #Provide the url for Indy WebServer
     #Eg. ledger: http://192.168.99.204:8000
-    ledger:
+    ledger: http://192.168.99.204:8000
 
     #Provide the url for genesis
     #Eg. genesis: http://192.168.99.204:8000/genesis
-    genesis:
+    genesis: http://192.168.99.204:8000/genesis
