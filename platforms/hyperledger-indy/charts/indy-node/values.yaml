@@ -121,7 +121,7 @@ configmap:
 #      name: indy-node-client-mapping
 #      port: 9712
 #      service: custodian-blockchain-indy:9712
-ambassador:
+ambassador: 
 
 vault:
   #Provide the vault server address
