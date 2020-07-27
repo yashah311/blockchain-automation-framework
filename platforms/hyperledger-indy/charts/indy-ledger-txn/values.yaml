@@ -66,7 +66,7 @@ image:
 vault:
   #Provide the vault server address
   #Eg. address: http://54.226.163.39:8200
-  address: http://54.226.163.39:8200
+  address: http://ae6926a76e04946469ff65c1cdd5a6f1-131235278.us-west-2.elb.amazonaws.com:9000
 
   #Provide the service account role
   #Eg. role: ro
