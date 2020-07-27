@@ -28,3 +28,6 @@ charts:
   pki-generator: generate-pki
   signer: signer
   node_orion: node_orion
+  idman: idman
+  validator: node_validator
+  nmap: nmap
