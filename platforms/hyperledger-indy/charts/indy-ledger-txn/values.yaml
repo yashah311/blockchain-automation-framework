@@ -5,16 +5,16 @@
 metadata:
   #Provide the namespace for organization's peer
   #Eg. namespace: baf
-  namespace:
+  namespace: baf
 
   #Provide the name for indy-ledger-txn release
   #Eg. name: indy-ledger-txn
-  name: 
+  name: indy-ledger-txn
 
 network:
   #Provide the name for network
   #Eg. name: baf
-  name: 
+  name:  baf
 
 organization:
   name:
@@ -22,65 +22,65 @@ organization:
   adminIdentity:
     #Provide the admin identity name
     #Eg. name: admin_name
-    name:
+    name: admin_name
 
     #Provide the admin identity path
     #Eg. path: admin_path
-    path:
+    path: admin_path
 
   newIdentity:
     #Provide the new identity name
     #Eg. name: identity_name
-    name:
+    name: identity_name
 
     #Provide the new identity path
     #Eg. path: identity_path
-    path:
+    path: identity_path
 
     #Provide the new identity role
     #Eg. role: identity_role
-    role:
+    role: identity_role
 
     #Provide the new identity did
     #Eg. did: identity_did
-    did:
+    did: identity_did
 
     #Provide the new identity did
     #Eg. verkey: verification key value
-    verkey:
+    verkey: verification key value
 
 image:
   cli: 
     #Provide the image name for the indy-ledger-txn container
     #Eg. name: indy-ledger-txn
-    name: 
+    name: indy-ledger-txn
 
     #Provide the image repository for the indy-ledger-txn container
     #Eg. repository: alpine:3.9.4
-    repository: 
+    repository: alpine:3.9.4
 
   #Provide the image pull secret of image
   #Eg. pullSecret: regcred
-    pullSecret:
+    pullSecret: regcred
 
 vault:
   #Provide the vault server address
   #Eg. address: http://54.226.163.39:8200
-  address: 
+  address: http://ae6926a76e04946469ff65c1cdd5a6f1-131235278.us-west-2.elb.amazonaws.com:9000
 
   #Provide the service account role
   #Eg. role: ro
-  role: 
+  role: ro
 
   #Provide the servicea ccount name for vault
   #Eg. serviceaccountname: vault-auth
-  serviceAccountName:
+  serviceAccountName: vault-auth
 
   #Provide the authpath
   #Eg. authpath: kubernetes-baf-provider-steward-1-auth
-  auth_path:
+  auth_path: kubernetes-baf-provider-steward-1-auth
   
 node:
   #Provide the indy-ledger-txn node name
   #Eg. name: indy-ledger
-  name:
+  name: indy-ledger

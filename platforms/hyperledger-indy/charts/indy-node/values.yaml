@@ -5,70 +5,70 @@
 metadata:
   #Provide the namespace for organization's peer
   #Eg. namespace: baf
-  namespace:
+  namespace: baf
 
   #Provide the name for indy-node release
   #Eg. name: indy-node
-  name:
+  name: indy-node
 
 #Provide the number of indy-node replicas
 #Eg. replicas: 1
-replicas:
+replicas: 1
 
 network:
   #Provide the name for network
   #Eg. name: baf
-  name:
+  name: baf
 
 organization:
   #Provide the name for organization
   #Eg. name: provider
-  name:
+  name: provider
 
 image:
   initContainer:
     #Provide the image name for the indy-node init container
     #Eg. name: indy-node
-    name:
+    name: indy-node
 
     #Provide the image repository for the indy-node init container
     #Eg. repository: alpine:3.9.4
-    repository:
+    repository: alpine:3.9.4
 
   indyNode:
     #Provide the name for the indy node
     #Eg. name: indy-node
-    name:
+    name: indy-node
 
     #Provide the image name for the indy-node container
     #Eg. repository: xxxx.accenture.com/uisp/indy-node-1.9.2:SR1.0.0-SNAPSHOT
-    repository:
+    repository: xxxx.accenture.com/uisp/indy-node-1.9.2:SR1.0.0-SNAPSHOT
 
   #Provide the image pull secret of image
   #Eg. pullSecret: regcred
-  pullSecret:
+  pullSecret: regcred
 
 node:
   #Provide the  node name
   #Eg. name: indy-node
-  name:
+  name: indy-node
 
   #Provide the  node ip
   #Eg. ip: 0.0.0.0
-  ip:
+  ip: 0.0.0.0
 
   #Provide the  node port
   #Eg. port: 15911
-  port:
+  port: 15911
 
 client:
   #Provide the client ip
   #Eg. ip: 0.0.0.0
-  ip:
+  ip: 0.0.0.0
 
   #Provide the client port
   #Eg. port: 15912
-  port:
+  port: 15912
 
 service:
   type:
@@ -76,26 +76,36 @@ service:
   ports:
     #Provide the service node port
     #Eg. nodePort: 9711
-    nodePort:
+    nodePort: 9711
 
     #Provide the service node target port
     #Eg. nodeTargetPort: 9711
-    nodeTargetPort:
+    nodeTargetPort: 9711
 
     #Provide the service client port
     #Eg. clientPort: 9712
-    clientPort:
+    clientPort: 9712
 
     #Provide the service client target port
     #Eg. clientTargetPort: 9712
-    clientTargetPort:
+    clientTargetPort: 9712
 
 configmap:
   #Provide the domain genesis
-  domainGenesis:
+  domainGenesis: |-
+      {"reqSignature":{},"txn":{"data":{"alias":"authority-trustee","dest":"68N4MNTN9K9cQJQhz4pKA2","role":"0","verkey":"3o5EVpzadvVYzT7X4sy1uD1d9zrRptQ72YiipCVyHroW"},"metadata":{},"type":"1"},"txnMetadata":{"seqNo":1},"ver":"1"}
+      {"reqSignature":{},"txn":{"data":{"alias":"provider-steward-1","dest":"JerLtFwVmp8f4LS6tdTDwA","role":"2","verkey":"Ad2wXywwt8NiBDXhQU6am2CVHbHyYRRY38HCxATE7pzz"},"metadata":{"from":"68N4MNTN9K9cQJQhz4pKA2"},"type":"1"},"txnMetadata":{"seqNo":2},"ver":"1"}
+      {"reqSignature":{},"txn":{"data":{"alias":"provider-steward-2","dest":"4M286TT2qVTSWn2i7d6Ggg","role":"2","verkey":"2pkLP55RVqjwPPZvRyrMXNasNxkGfvUuHs2sXgpvjgLv"},"metadata":{"from":"68N4MNTN9K9cQJQhz4pKA2"},"type":"1"},"txnMetadata":{"seqNo":3},"ver":"1"}
+      {"reqSignature":{},"txn":{"data":{"alias":"partner-steward-1","dest":"Rsn88jsgAGSyABaB8b73V4","role":"2","verkey":"EZN4GQMvFhUv7jqDbf3Q7aow9Yb7JcKgidfSTR8zbsp5"},"metadata":{"from":"68N4MNTN9K9cQJQhz4pKA2"},"type":"1"},"txnMetadata":{"seqNo":4},"ver":"1"}
+      {"reqSignature":{},"txn":{"data":{"alias":"partner-steward-2","dest":"8QrUxhXHb7v63D2PPwdZr3","role":"2","verkey":"53HWJHMUDFEaVwRLk8awK9meoatqZrqiyNsJqHP3M6sN"},"metadata":{"from":"68N4MNTN9K9cQJQhz4pKA2"},"type":"1"},"txnMetadata":{"seqNo":5},"ver":"1"}
+
 
   #Provide the pool genesis
-  poolGenesis:
+  poolGenesis: |-
+    #{"reqSignature":{},"txn":{"data":{"data":{"alias":"provider-steward-1","blskey":"HHoREgUbA932WS2b6UjuUqLCGftPwp5WHvRGHRhA4QrsbV56qf13u7v6JZSRLV3cw4voQ8tqevf8dikmacwtsNh6Lr7KTPJfYuYcZd3iM7RhV1KkMKy6xkYgHEz9HeKwS5EtmWbuK2hU5ADjjJyj8gHvyxGV45GtSyuv4SXXhk28og","blskey_pop":"QuvE3nzfx3Jb81H2HVB37TABzg7h9zUKu2cWD3EupQ9YCo3JTh1BQsY65WdEw9uwrywRgcfXRAkFf3t35JFXhi5eYKB42qpmcWqFi3XQ1aorXo1jz2WnX1rNJeRozTnsxTMMNABRr69exxNFbgH6z3pA44vgyeFQAR68Wd69LNrGsy","client_ip":"3.221.78.194","client_port":19712,"node_ip":"3.221.78.194","node_port":19711,"services":["VALIDATOR"]},"dest":"Ad2wXywwt8NiBDXhQU6am2CVHbHyYRRY38HCxATE7pzz"},"metadata":{"from":"JerLtFwVmp8f4LS6tdTDwA"},"type":"0"},"txnMetadata":{"seqNo":1,"txnId":"917292505e1e4063b0e6b30d73c131649e5a16271d3c96c3284751a66ef1ff50"},"ver":"1"}
+    #{"reqSignature":{},"txn":{"data":{"data":{"alias":"provider-steward-2","blskey":"2GaTCgC6qmGopiCGxirPWVQDT6odF2QXzwrPAFQZFvtrBTS8GNo5LHNq5iuP8KrXSXfV6RFJTpqyHzAxuCiU5CMGEGao4zTgQj3HvWhrZ7KUJDbLUgVcdyGv3sjwaU37oAQyKUv3gX8BKf6qwMyM9VAG1BqR8VRNXgQjNfV279FGV2h","blskey_pop":"R1VtRJprMMV7YrYaYGforT1sckiUZ2UzDTDSnTGKon611Mnv8VQiNXrW4W4eFsJBtU774PDNgvWbNbZd9Vujq8Tng8RgAfzLmbNeGjtze55X71Rf2EVG3swUyuTBoLChHfCh9VBogHZC18UJZxPvHwHE2kDn4shGcFWLfxNKqKHBzF","client_ip":"3.221.78.194","client_port":19722,"node_ip":"3.221.78.194","node_port":19721,"services":["VALIDATOR"]},"dest":"2pkLP55RVqjwPPZvRyrMXNasNxkGfvUuHs2sXgpvjgLv"},"metadata":{"from":"4M286TT2qVTSWn2i7d6Ggg"},"type":"0"},"txnMetadata":{"seqNo":2,"txnId":"aecd2adbe0d6c4c0ef6e3f78503bddfa8e6078f030381ae895bae9d0da84124f"},"ver":"1"}
+    #{"reqSignature":{},"txn":{"data":{"data":{"alias":"partner-steward-1","blskey":"3kpJ27VSF4mDKxkeTGa7CdvwGjFrJTT53MH7KaKsWgbAke38fznDhGCpe5QapkEhyoxb2xvCPfDRS3Nnu5GiRZ9GxEdZLsKkYGVkjCA4TysscXUeq6jKZnKkpZG2PMKM9YtfLjzF36tXHmXrvweZcAq4bUnhEckn2iJSuorK6ZyGmmZ","blskey_pop":"RFRVgKNbHe6EF2L419bgs8Yaws1NwYchPLKYFgdMi2bBZRiL1uDdqtpELrW5Q2TvXfKGDjChTvDiR8mCZLBDgxD54a8gzt5CNzPtkBrv96u8jAVj1LLLzx7T3Z6YuHvtSYKh4Bs83Uag8TkdDnrrcsgRdnER7jGhmq758z8Z1tb4MD","client_ip":"3.221.78.194","client_port":19732,"node_ip":"3.221.78.194","node_port":19731,"services":["VALIDATOR"]},"dest":"EZN4GQMvFhUv7jqDbf3Q7aow9Yb7JcKgidfSTR8zbsp5"},"metadata":{"from":"Rsn88jsgAGSyABaB8b73V4"},"type":"0"},"txnMetadata":{"seqNo":3,"txnId":"62a426a55142745dcd68456212d322c8b63682274fcdffd10c3d274e0f87469b"},"ver":"1"}
+    #{"reqSignature":{},"txn":{"data":{"data":{"alias":"partner-steward-2","blskey":"24sdVVdpMotejPMswqfuNks1tZUy2d6aB2Gxb74QXuP7LTWfxYcQUeedyL3J1zADDAf7Mj5oZfxupvV1yJrYwHscP6biY9sJVSMYYaEmdFjsy6LWYP5Gtja4uyBiYksXB3rzbp39cj4HLwwrxPrSAx4Ar6TRvEWGerYQBhXWBNYvR2W","blskey_pop":"Qkn8sg6RPLGihnap32vmLURjdA4z9CjjwmDadcdBrwRVLb6FSAbnNynkVkK9vXBYZti4xLBB6rtktZVwrVm6k3thZQZehMbEeEgpX148D5v7Z8aLz2AkhtJUZKeNtn6S2umhRTHgon6Fs4YxRRFYR3uVFMot6r1i4unYZeP6JChvD5","client_ip":"3.221.78.194","client_port":19742,"node_ip":"3.221.78.194","node_port":19741,"services":["VALIDATOR"]},"dest":"53HWJHMUDFEaVwRLk8awK9meoatqZrqiyNsJqHP3M6sN"},"metadata":{"from":"8QrUxhXHb7v63D2PPwdZr3"},"type":"0"},"txnMetadata":{"seqNo":4,"txnId":"bf525e539b7e0d3e0eeeb2a075198dde681f56ce7d724aca0ebf6d606289a523"},"ver":"1"}
 
 #Provide annotations for ambassador service configuration
 #Only use HTTPS as HTTP and HTTPS don't work together ( https://github.com/datawire/ambassador/issues/1000 )
@@ -111,50 +121,50 @@ configmap:
 #      name: indy-node-client-mapping
 #      port: 9712
 #      service: custodian-blockchain-indy:9712
-ambassador:
+ambassador: 
 
 vault:
   #Provide the vault server address
   #Eg. address: http://54.226.163.39:8200
-  address:
+  address: http://ae6926a76e04946469ff65c1cdd5a6f1-131235278.us-west-2.elb.amazonaws.com:9000
 
   #Provide the service account name for vault
   #Eg. serviceaccountname: vault-auth-provider-agent-app
-  serviceAccountName:
+  serviceAccountName: vault-auth-provider-agent-app
 
   #Provide the key path for vault
   #Eg. keyPath: /keys/udisp/keys/indy-node
-  keyPath:
+  keyPath: /keys/udisp/keys/indy-node
 
   #Provide the authpath
   #Eg. authpath: kubernetes-baf-provider-steward-1-auth
-  auth_path:
+  auth_path: kubernetes-baf-provider-steward-1-auth
 
   #Provide the indy-node node Id 
   #Eg. nodeId: indy-node
-  nodeId:
+  nodeId: indy-node
 
   #Provide the indy-node role
   #Eg. role: ro
-  role:
+  role: ro
 
 
 storage:
   keys:
     #Provide the storage size for storage for keys
     #Eg. storagesize: 512Mi
-    storagesize:
+    storagesize: 512Mi
 
     #Provide the storageClassName for storage for keys
     #Eg. storageClassName: ebs
-    storageClassName:
+    storageClassName: ebs
 
   data:
     #Provide the storage size for storage for data
     #Eg. storagesize: 5Gi
-    storagesize:
+    storagesize: 5Gi
     
     #Provide the storageClassName for storage for data
     #Eg. storageClassName: ebs
-    storageClassName:
+    storageClassName: ebs
 
